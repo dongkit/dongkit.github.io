@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christian Kit Tumagan | iOS & Frontend Developer</title>
+  <title>Christian Kit's Portfolio</title>
+  <link rel="icon" href="img/casual_pic.jpg" type="image/png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
@@ -11,7 +13,11 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-      <h1 class="text-lg sm:text-xl font-bold">Christian Kit</h1>
+
+      <!-- Logo with link -->
+      <a href="#hero" class="flex items-center gap-2">
+        <span class="text-lg sm:text-xl font-bold text-gray-800">Christian Kit</span>
+      </a>
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
@@ -47,17 +53,30 @@
   </header>
 
   <!-- Hero -->
-  <section class="text-center py-20 sm:py-24 bg-gradient-to-b from-blue-400 to-blue-500 text-white px-4">
-    <div class="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full p-[16px] bg-[url('img/border_1.gif')] bg-cover bg-center">
-    <img src="img/toga.png" class="w-full h-full rounded-full object-cover object-top" />
-  </div>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">iOS & Frontend Developer</h2>
-    <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
-      I build clean, scalable, and user-focused applications using Swift, UIKit, SwiftUI, and modern web technologies.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-      <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">View Projects</a>
-      <a href="#contact" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600">Contact Me</a>
+  <section id="hero" class="relative text-center py-20 sm:py-24 text-white px-4">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <video autoplay muted loop class="w-full h-full object-cover">
+        <source src="videos/cornering.MOV" type="video/mp4">
+      </video>
+      <!-- Overlay for opacity -->
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10">
+      <div class="w-28 h-28 sm:w-32 sm:h-32 mx-auto mb-6 rounded-full p-[16px] bg-[url('img/border_1.gif')] bg-cover bg-center">
+        <img src="img/toga.png" class="w-full h-full rounded-full object-cover object-top" />
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">iOS & Frontend Developer</h2>
+      <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+        I build clean, scalable, and user-focused applications using Swift, UIKit, SwiftUI, and modern web technologies.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">View Projects</a>
+        <a href="#contact" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600">Contact Me</a>
+      </div>
     </div>
   </section>
 
@@ -182,10 +201,21 @@
         <h4 class="text-xl font-semibold mb-4">Gallery</h4>
         <div class="relative w-full overflow-hidden rounded-xl shadow bg-white p-4">
           <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
-            <img src="img/banking_1.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
-            <img src="img/banking_2.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
-            <img src="img/banking_4.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
-            <img src="img/banking_5.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
+            <a href="img/banking_1.JPG" class="glightbox">
+              <img src="img/banking_1.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            </a>
+            <a href="img/banking_2.JPG" class="glightbox">
+              <img src="img/banking_2.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            </a>
+            <a href="img/banking_3.JPG" class="glightbox">
+              <img src="img/banking_3.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            </a>
+            <a href="img/banking_4.JPG" class="glightbox">
+              <img src="img/banking_4.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            </a>
+            <a href="img/banking_5.JPG" class="glightbox">
+              <img src="img/banking_5.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            </a>
           </div>
         </div>
       </div>
@@ -209,10 +239,37 @@
         christiankit8@gmail.com
       </a>
 
-      <div class="mt-4 space-x-4">
-        <a href="#" class="text-blue-600">GitHub</a>
-        <a href="#" class="text-blue-600">LinkedIn</a>
+      <div class="mt-4 flex justify-center gap-4">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/christiankit888" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 17 22 12z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/cyan.kytt/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 hover:opacity-90 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.17.056 1.97.246 2.428.415a4.92 4.92 0 011.787 1.037 4.92 4.92 0 011.037 1.787c.169.458.359 1.258.415 2.428.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.056 1.17-.246 1.97-.415 2.428a4.92 4.92 0 01-1.037 1.787 4.92 4.92 0 01-1.787 1.037c-.458.169-1.258.359-2.428.415-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.17-.056-1.97-.246-2.428-.415a4.92 4.92 0 01-1.787-1.037 4.92 4.92 0 01-1.037-1.787c-.169-.458-.359-1.258-.415-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.056-1.17.246-1.97.415-2.428a4.92 4.92 0 011.037-1.787 4.92 4.92 0 011.787-1.037c.458-.169 1.258-.359 2.428-.415C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.736 0 8.332.012 7.052.07 5.773.128 4.755.318 3.95.627a6.97 6.97 0 00-2.53 1.64 6.97 6.97 0 00-1.64 2.53C-.318 6.755-.128 7.773-.07 9.052.012 10.332 0 10.736 0 12s.012 1.668.07 2.948c.058 1.28.248 2.298.557 3.103a6.97 6.97 0 001.64 2.53 6.97 6.97 0 002.53 1.64c.805.309 1.823.499 3.103.557 1.28.058 1.684.07 2.948.07s1.668-.012 2.948-.07c1.28-.058 2.298-.248 3.103-.557a6.97 6.97 0 002.53-1.64 6.97 6.97 0 001.64-2.53c.309-.805.499-1.823.557-3.103.058-1.28.07-1.684.07-2.948s-.012-1.668-.07-2.948c-.058-1.28-.248-2.298-.557-3.103a6.97 6.97 0 00-1.64-2.53 6.97 6.97 0 00-2.53-1.64C17.298.318 16.28.128 15 .07 13.72.012 13.316 0 12 0z"/>
+            <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zM18.406 4.594a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/dongkit" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.415-4.033-1.415-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.304.762-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.467-2.381 1.236-3.222-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.502 11.502 0 016 0c2.292-1.552 3.3-1.23 3.3-1.23.653 1.653.24 2.873.117 3.176.77.841 1.236 1.912 1.236 3.222 0 4.61-2.807 5.625-5.479 5.921.429.369.823 1.096.823 2.209v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/christiankit" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-700 hover:bg-blue-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.082 20.452H3.542V9h3.54v11.452zM5.312 7.557c-1.13 0-2.048-.917-2.048-2.048 0-1.13.918-2.048 2.048-2.048 1.13 0 2.048.918 2.048 2.048 0 1.13-.918 2.048-2.048 2.048zm15.14 12.895h-3.54v-5.605c0-1.336-.026-3.056-1.862-3.056-1.863 0-2.149 1.453-2.149 2.957v5.704h-3.54V9h3.396v1.561h.049c.474-.897 1.632-1.842 3.358-1.842 3.595 0 4.258 2.368 4.258 5.448v6.293z"/>
+          </svg>
+        </a>
       </div>
+
     </div>
   </section>
 
@@ -222,7 +279,13 @@
   </footer>
 
 </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      loop: true, // allows next/previous navigation
+    });
+  </script>
   <script>
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
