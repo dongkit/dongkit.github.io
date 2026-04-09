@@ -71,16 +71,6 @@
     </p>
   </section>
 
-  <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-    <h3 class="text-2xl sm:text-3xl font-bold mb-6">About Me</h3>
-    <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
-      I'm a passionate developer with experience in both frontend and iOS development. I started my career as a Software Developer Intern at DNA Micro, then worked as a Frontend Developer at FDC, and now specialize in building iOS applications using UIKit and SwiftUI.
-      <br/><br/>
-      I enjoy creating smooth user experiences, integrating APIs, and writing clean, maintainable code.
-    </p>
-  </section>
-
   <!-- Skills -->
   <section id="skills" class="bg-white py-12 sm:py-16">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -93,6 +83,9 @@
         <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">TypeScript</span>
         <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">Tailwind CSS</span>
         <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">PHP</span>
+        <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">AngularJS</span>
+        <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">jQuery</span>
+        <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">Bootstrap</span>
         <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">REST APIs</span>
         <span class="bg-gray-100 p-3 sm:p-4 rounded-xl">Git</span>
       </div>
@@ -189,12 +182,18 @@
         <h4 class="text-xl font-semibold mb-4">Gallery</h4>
         <div class="relative w-full overflow-hidden rounded-xl shadow bg-white p-4">
           <div class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory">
-            <img src="img/banking_1.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
-            <img src="img/banking_2.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
-            <img src="img/banking_4.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
-            <img src="img/banking_5.JPG" class="w-64 h-40 object-cover rounded-lg snap-center" />
+            <img src="img/banking_1.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
+            <img src="img/banking_2.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
+            <img src="img/banking_5.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
+            <img src="img/banking_4.JPG" class="w-64 h-40 object-cover rounded-lg snap-center cursor-pointer gallery-img" />
           </div>
         </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+        <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-lg" />
+        <button id="lightbox-close" class="absolute top-4 right-4 text-white text-2xl font-bold">&times;</button>
       </div>
   </section>
 
@@ -227,9 +226,33 @@
   <script>
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
 
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+    });
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    });
+
+    lightbox.addEventListener('click', e => {
+      if(e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
     });
   </script>
 
