@@ -56,7 +56,7 @@
   <section id="hero" class="relative text-center py-20 sm:py-24 text-white px-4">
     <!-- Background Image -->
     <div class="absolute inset-0">
-      <video autoplay muted loop class="w-full h-full object-cover">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover pointer-events-none">
         <source src="videos/cornering.MOV" type="video/mp4">
       </video>
       <!-- Overlay for opacity -->
@@ -293,6 +293,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
+    const bgVideo = document.querySelector('section#hero video');
 
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
@@ -317,6 +318,17 @@
         lightbox.classList.remove('flex');
       }
     });
+
+    // ensure video loops and restarts if paused
+    bgVideo.addEventListener('ended', () => {
+      bgVideo.currentTime = 0;
+      bgVideo.play();
+    });
+
+    // also ensure it plays if accidentally paused
+    setInterval(() => {
+      if (bgVideo.paused) bgVideo.play();
+    }, 1000);
   </script>
 
 </html>
